@@ -1,44 +1,40 @@
 package deqo.jlao.mysimplestack;
 
+import java.util.ArrayList;
 import java.util.EmptyStackException;
 
 
 public class Stack implements SimpleStack {
-    private int size;
-    private Item[] stack;
-    private int top;
+    private ArrayList<Item> stack;
 
-    Stack(int maxSize) {
-        size = 0;
-        stack = new Item[maxSize];
-        top = -1;
+    Stack() {
+        stack = new ArrayList<>();
     }
 
     @Override
     public void push(Item item) {
-        stack[++top] = item;
-        size++;
+        stack.add(0,item);
     }
 
     @Override
     public boolean isEmpty() {
-        return top == -1;
+        return stack.isEmpty();
     }
 
     @Override
     public int getSize() {
-        return size;
+        return stack.size();
     }
 
     @Override
     public Item peek() throws EmptyStackException {
         if (this.isEmpty()) throw new EmptyStackException();
-        return stack[top];
+        return stack.get(0);
     }
 
     @Override
     public Item pop() throws EmptyStackException {
         if (this.isEmpty()) throw new EmptyStackException();
-        return stack[top--];
+        return stack.remove(0);
     }
 }

@@ -12,9 +12,9 @@ public class StackTest {
     private Stack s1,s2;
 
     @Before
-    public void setUp() throws Exception {
-        s1 = new Stack(5);
-        s2 = new Stack(5);
+    public void setUp() {
+        s1 = new Stack();
+        s2 = new Stack();
         s2.push(new Item(1));
         s2.push(new Item(2));
     }
