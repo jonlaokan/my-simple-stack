@@ -10,6 +10,7 @@ import static org.junit.Assert.*;
 public class StackTest {
 
     private Stack s1,s2;
+    private Item it2;
 
     /*
         Stratégie pour mettre en place des tests utiles
@@ -20,8 +21,9 @@ public class StackTest {
     public void setUp() {
         s1 = new Stack();
         s2 = new Stack();
+        it2 = new Item(2);
         s2.push(new Item(1));
-        s2.push(new Item(2));
+        s2.push(it2);
     }
 
     @Test (expected = EmptyStackException.class)
@@ -31,7 +33,7 @@ public class StackTest {
 
     @Test
     public void testPeekStack() {
-        assertEquals(new Item(2).getValue(), s2.peek().getValue());
+        assertEquals(it2, s2.peek());
     }
 
     @Test( expected = EmptyStackException.class)
@@ -51,7 +53,7 @@ public class StackTest {
 
     @Test
     public void testSizeStack() {
-        assertEquals("s2 should be equal to 2",0,s1.getSize());
+        assertEquals("s2 should be equal to 2",2,s2.getSize());
     }
 
     @Test
