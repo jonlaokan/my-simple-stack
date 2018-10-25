@@ -11,6 +11,11 @@ public class StackTest {
 
     private Stack s1,s2;
 
+    /*
+        Stratégie pour mettre en place des tests utiles
+        Appliquer tous les opérateurs à chaque constructeur
+     */
+
     @Before
     public void setUp() {
         s1 = new Stack();
